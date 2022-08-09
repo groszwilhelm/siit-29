@@ -1,0 +1,119 @@
+<!-- 
+  HTTP
+  HTTPS
+ -->
+
+<!-- 
+  Symmetric Encryption  Caesar Cipher 
+
+  ABCD -> BCDE +1 -> ABCD
+
+  Asymmetric Encryption 
+
+  Wili            Dorin
+
+  private key     private key -> Used to decrypt all received messages.
+  public key      public key -> Encrypt messages but we can't decrypt them anymore.
+ 
+-->
+
+<!-- Encryption -> Reversible   -->
+<!-- Hashing -> Encrypts info forever 123 -> something random -> abcda -->
+<!-- Hashing -> Encrypts info forever 123 -> something random -> abcds -->
+
+<!-- HTML - Hyper Text Markup Language -->
+<!-- Hyper Text -> Documents linked together via anchors -->
+<!-- Markup Language -> Provides a marking "structure" for our content -->
+
+<!-- 
+  tag (or element) -> 
+
+  <tag_name attributes > tag content </tag_name>
+  <tag1 attributes>
+    <tag2></tag2>
+
+    <tag3>
+      <tag4>
+      </tag3>
+    </tag4>
+
+  </tag1>
+
+  attributes - can one or many -> configure elements
+-->
+
+<!DOCTYPE html>
+<!-- Defines what language the browser should use, version html 5 if not present browser eners Quircks mode -->
+<html lang="en">
+
+<head>
+  <!-- This is the place to put metadata !important all content from here won't be shown in the webpage -->
+  <meta description="This is a test page for siit 29">
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Links to css files -->
+  <!-- Links to javascript -->
+  <!-- Links to fonts -->
+  <!-- External resources loaded into the website -->
+
+  <title>Siit 29</title>
+  <favicon src=""></favicon>
+</head>
+
+<body>
+  <!-- 
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element MDN docs
+    p, div, header, h1-h6, span, a, img, ol, ul, li, form, input, label, button, textarea, footer, table
+ -->
+
+  <!-- Elements can be:
+  block: (ex: p) Expand to the whole width of the page, and push other content to a new line.
+  inline: (ex: span) tries to ocupy as least space as possible, they don't push things around.
+-->
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste reprehenderit quam, repudiandae ipsum perspiciatis
+    laboriosam tenetur consectetur deserunt suscipit quos. Debitis iure doloremque, labore suscipit exercitationem qui
+    deserunt impedit quam.
+  </p>
+
+  <!-- divider -->
+  <div>
+    <span>Hello</span>
+  </div>
+
+  <span>World</span>
+  <span>!</span>
+
+  <h1>HTML intorduction book</h1>
+  <h2>Chapter 1</h2>
+  <h2>Chapter 2</h2>
+  <h2>Chapter 3</h2>
+  <h3>Heading 1.1</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <a href="other-pages/second.html#navigateHere">Link to another page</a>
+  <a href="https://www.google.com" target="_blank">Go to google</a>
+
+  <div>
+    <img src="./img.png" width="300" height="300" alt="Hello" />
+  </div>
+
+</body>
+
+
+</html>
+
+<!-- 
+  Actors using our web page:
+
+  -> users in general
+  -> search engines (crawlers)
+  -> we as developers
+  -> special users (users with disabilities, vision) accessibility a11y
+-->
