@@ -97,17 +97,112 @@
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
 
+  <div>
+    <!-- Progressive enhancement -->
+    <picture>
+      <source srcset="https://picsum.photos/200/300" media="(min-width: 600px)">
+      <source srcset="https://picsum.photos/400/600" media="(min-width: 1200px)">
+      <source srcset="https://picsum.photos/800/1200" media="(min-width: 1600px)">
+      <img src="https://picsum.photos/800/1200" />
+    </picture>
+  </div>
+
   <a href="other-pages/second.html#navigateHere">Link to another page</a>
   <a href="https://www.google.com" target="_blank">Go to google</a>
 
-  <div>
-    <img src="./img.png" width="300" height="300" alt="Hello" />
-  </div>
 
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ol>
+
+  <ul type="square">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <dl>
+    <dt>Title</dt>
+    <dd>Content for my use case</dd>
+    <dt>Title</dt>
+    <dd>Content for my use case</dd>
+    <dt>Title</dt>
+    <dd>Content for my use case</dd>
+  </dl>
+
+  <table border="2">
+    <colgroup>
+      <col style="background-color: green;" span="2" />
+      <col style="background-color: yellow;" />
+      <col style="background-color: blue;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <!-- <th colspan="4">Column 1</th> -->
+        <th scope="col">Column 1</th>
+        <th scope="col">Column 2</th>
+        <th scope="col">Column 3</th>
+        <th scope="col">Column 4</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="2">Secondary tile</th>
+        <td scope="row">Test 2</td>
+        <td scope="row">Test 3</td>
+        <td scope="row">Test 4</td>
+      </tr>
+
+      <tr>
+        <!-- <td>Test 1</td> -->
+        <td scope="row">Test 2</td>
+        <td scope="row">Test 3</td>
+        <td scope="row">Test 4</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+
+    </tfoot>
+  </table>
+
+  <form>
+    <fieldset>
+      <label>
+        User name
+        <input type="text" name="userName" required minlength="5" maxlength="10" pattern="[Tt]est|[Hh]ello|[Ww]orld" />
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <label for="userFormAge">Age</label>
+      <input id="userFormAge" type="number" name="age" required />
+    </fieldset>
+
+    <fieldset>
+      <label>Email</label>
+      <input type="email" name="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+    </fieldset>
+
+    <button>Submit</button>
+  </form>
 </body>
 
 
 </html>
+
+<!--
+  .png
+  .jpg
+  .gif
+  .webp -> Format from google 12mb 500kb -> https://developers.google.com/speed/webp
+ -->
 
 <!-- 
   Actors using our web page:
@@ -116,4 +211,24 @@
   -> search engines (crawlers)
   -> we as developers
   -> special users (users with disabilities, vision) accessibility a11y
+-->
+
+<!--
+
+  https://www.google.com:443/home/products?name=adidas&category=shoes#someId
+
+  https:// -> schema (it also includes protocol http)
+  www.orice.ro -> domain 
+    www -> sub-domain
+    orice -> domain
+    ro -> top level domain
+  :443 -> port -> default port for https
+  :80 -> default port for http
+  /home/products -> resource path
+  ?name=adidas&category=shoes -> query params -> send addition information to the server 
+    -> key value pair 
+    -> name = adidas
+    -> & separates key value pairs into groups
+    -> category = shoes
+  #someId -> fragment -> navigates to a given id in the page
 -->
