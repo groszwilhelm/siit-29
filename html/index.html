@@ -172,7 +172,13 @@
     </tfoot>
   </table>
 
-  <form>
+  <!-- 
+    Method:
+    - GET (Default)
+    - POST
+   -->
+
+  <form novalidate>
     <fieldset>
       <label>
         User name
@@ -186,11 +192,25 @@
     </fieldset>
 
     <fieldset>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="age" required />
+    </fieldset>
+
+    <fieldset>
       <label>Email</label>
       <input type="email" name="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
     </fieldset>
 
-    <button>Submit</button>
+    <textarea rows="10" cols="10"></textarea>
+
+    <label for="optionSelect">Option</label>
+    <select id="optionSelect" name="option">
+      <option value="option1">Option 1</option>
+      <option value="option2" selected>Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+
+    <button disabled>Submit</button>
   </form>
 </body>
 
@@ -232,3 +252,21 @@
     -> category = shoes
   #someId -> fragment -> navigates to a given id in the page
 -->
+
+<!-- 
+
+  Semantic HTML - anti div movement
+
+  -> header : heading (h1 - h6) title - navigation
+  -> footer : copyright, trademark, details, additional content
+  -> section : section of a page, has relevance on it's own
+  -> figure : contains pictures, diagrams, charts, related to the content 
+  -> article : blog article, some standalone content, product
+  -> nav : navigation
+  -> aside : sidebar - additional site content, not so relevant - advertisement 
+  -> main : Main content of the application should appear only once
+  -> strong, em 
+
+  -> Non semantic elements div, span 
+
+ -->

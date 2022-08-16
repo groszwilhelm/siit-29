@@ -1,0 +1,18 @@
+/* . -> selects classes  */
+/* element.class -> targets all elements with given class name */
+.list {
+  color: red;
+  list-style-type: none;
+}
+
+ul li {
+  color: green;
+}
+
+li .highlight {
+  color: orange;
+}
+
+.highlight {
+  color: deeppink;
+}
