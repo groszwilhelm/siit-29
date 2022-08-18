@@ -5,14 +5,121 @@
   list-style-type: none;
 }
 
-ul li {
+li {
   color: green;
 }
 
-li .highlight {
+ul.highlight {
+  /* Inheritance */
   color: orange;
 }
 
 .highlight {
   color: deeppink;
+}
+
+#someId {
+  color: blue;
+}
+
+* {
+  font-size: 24px;
+}
+
+[hello="something"] {
+  color: yellow;
+}
+
+#someId {
+  color: deeppink;
+}
+
+/* 
+  tag (element), pseudo element - least specific 1
+  class, attribute, pseudo class - more specific 10
+  id - most specific 100
+  inline style - 1000
+  important - 10000
+*/
+
+/* #red {
+  color: red;
+} */
+
+/* Specificity: 112 */
+body article[class].yellow {
+  color: deeppink;
+}
+
+/* Specificity: 21 */
+article[class].yellow {
+  color: yellow;
+}
+
+article {
+  color: blue;
+}
+
+/* Specificity: 10100 */
+/* #red {
+  color: blue !important;
+} */
+
+/* 
+  Specificity 10010
+*/
+.u-color-red {
+  color: red !important;
+}
+
+/* Pseudo classes */
+
+.btn-submit:hover {
+  background-color: deeppink;
+}
+
+a:visited {
+  color: green;
+}
+
+.btn-submit:active {
+  background-color: green;
+}
+
+a:link {
+  color: red;
+}
+
+button:focus,
+a:focus {
+  background-color: purple;
+  outline: 2px dotted lightblue;
+}
+
+/* Pseudo elements */
+.my-paragraph::first-letter {
+  font-size: 100px;
+}
+
+.register-form {
+  color: green;
+}
+
+.register-form input::placeholder {
+  color: deeppink;
+}
+
+.my-paragraph::before {
+  display: none;
+  content: "🔥";
+  /* visibility: hidden; */
+}
+
+.my-paragraph::after {
+  content: "🔥";
+}
+
+.my-paragraph:hover::before {
+  display: inline;
+  /* visibility: visible; */
 }

@@ -9,14 +9,25 @@
   <title>CSS</title>
 
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .u-color-red {
+      color: blue !important;
+    }
+  </style>
 </head>
 
 <body>
-  <ul class="list">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+  <ul class="list highlight">
+    <li id="someId">1</li>
+    <li class="highlight">2</li>
+    <li hello="something">3</li>
+    <li hello="somethingElse">4</li>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 
   <ul class="list">
@@ -34,9 +45,38 @@
     <li>4</li>
   </ul>
 
-  <article class="highlight">
+  <article class="yellow u-color-red" id="red" style="color: deeppink">
     This is a pink text
   </article>
+
+  <img src="./assets/specifishity.png">
+
+  <p>
+    <button class="btn-submit">Submit</button>
+  </p>
+
+  <a href="https://google.com" target="_blank">Go to google</a>
+  <a href="https://google.com?q=something" target="_blank">Go to google</a>
+
+  <p class="my-paragraph">
+    <!-- Before element -->
+    <!-- <span>🔥</span> -->
+
+    Hello world
+
+    <!-- After element -->
+    <!-- <span>🔥</span> -->
+  </p>
+
+  <fieldset class="register-form">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" placeholder="Here goes your input..." />
+    </div>
+
+    <label for="email2">Email</label>
+    <input id="email2" placeholder="Here goes your input..." />
+  </fieldset>
 </body>
 
 </html>
