@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+h2 {
+  margin: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: deeppink;
+  /* border-style: solid;
+  border-width: 3px;
+  border-color: rgb(0, 255, 0); */
+  border: 3px solid rgb(0, 255, 0);
+  /* padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem; */
+  /* padding: 1rem 1rem 1rem 1rem; */
+  /* 
+    Applies to all directions
+  */
+  padding: 1rem;
+
+  /* 
+    First applies top bottom, second applies right, left
+  */
+  padding: 1rem 2rem;
+
+  /* 
+    First applies top, second applies right, left, third applies bottom
+  */
+  padding: 1rem 2rem 1.5rem;
+
+  /* margin: 2rem; */
+  margin: 2rem 2rem 2rem 2rem;
+}
