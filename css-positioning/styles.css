@@ -1,9 +1,10 @@
 /* 
   CSS positioning
-  -> relative
-  -> absolute
-  -> fixed
-  -> sticky
+  -> relative - positions element related to it's own initial position
+  -> absolute - positions element relative to closest positioned parent
+  -> fixed - positions element relative to the body tag 
+  -> sticky - stays where it is, and if the container allows moves the element from the top of the viewport
+  -> static - default value of all elements
 
   these positions enable us the use of the following additional properties:
 
@@ -64,7 +65,7 @@ section {
 .box-red {
   position: sticky;
   background-color: red;
-  top: 0;
+  top: -100px;
   left: 300px;
 }
 

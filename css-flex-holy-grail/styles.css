@@ -1,0 +1,49 @@
+html,
+body {
+  height: 100%;
+}
+
+header {
+  background-color: blue;
+  height: 20%;
+}
+
+.main-content {
+  height: 60%;
+}
+
+nav {
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  background-color: red;
+}
+
+main {
+  display: inline-block;
+  background-color: deeppink;
+  height: 100%;
+  width: 60%;
+  margin-left: -4px;
+}
+
+aside {
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  margin-left: -4px;
+  background-color: purple;
+}
+
+footer {
+  background-color: green;
+  height: 20%;
+}
+
+.holy-grail-container {
+
+  /* 
+    height: auto; by default
+  */
+  height: 100%;
+}
