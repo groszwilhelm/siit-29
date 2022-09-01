@@ -1,0 +1,98 @@
+.modal-container {
+  position: fixed;
+  /* 
+    Equivalent to inset: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  */
+  /* height: 100%; */
+
+  inset: 0;
+  background-color: white;
+}
+
+.modal {
+  background-color: white;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+  padding: 0 1rem;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+p {
+  height: 3000px;
+  background-color: deeppink;
+}
+
+fieldset {
+  display: flex;
+  border: none;
+}
+
+label {
+  flex: 1;
+}
+
+input,
+textarea {
+  flex: 3;
+}
+
+button {
+  margin-top: 2rem;
+  align-self: center;
+}
+
+@media (min-width: 550px) {
+  .modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal {
+    width: 550px;
+  }
+}
+
+/* 
+  BEM naming convention
+
+  Block Element Modifier
+
+  modal
+
+  __header
+
+  --active
+
+  modal__header modal__header--active
+
+  card
+
+  card__header
+  card__body
+  card__footer 
+
+  card__header--primary
+  card__header--secondary
+  card__header--accent
+
+  alternative:
+  card__header_primary
+*/

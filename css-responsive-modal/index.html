@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./index.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>My webapp</h1>
+  </header>
+
+  <main>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum enim rerum suscipit, doloremque facere officiis
+      adipisci necessitatibus vel ipsam. Porro itaque eius tempore voluptatum et unde cupiditate! Dolore, quam quos!
+      Quis alias pariatur expedita dolorem voluptatem eligendi numquam laudantium, saepe sunt voluptates esse aut! Nisi,
+      numquam consectetur! Aut, totam harum quisquam architecto nobis soluta sapiente, beatae, perferendis dolor nulla
+      sunt.
+      Cumque recusandae, dolorem corporis nesciunt dolore accusantium molestiae blanditiis neque placeat assumenda
+      obcaecati quasi omnis non debitis, repellat dignissimos alias ut! Reprehenderit praesentium accusantium quia quasi
+      incidunt. Ab, nobis consectetur!
+      Nulla autem fugiat laborum numquam officiis incidunt esse, alias quia exercitationem at possimus debitis nemo
+      aperiam fuga amet atque, doloremque cupiditate laudantium voluptas quasi. Laudantium quisquam possimus quas
+      tempora eius?
+    </p>
+
+    <button data-modal-open>Open contact form</button>
+
+    <div data-modal-container class="modal-container">
+      <section class="modal">
+        <header class="modal__header">
+          <h1>
+            Contact Us
+          </h1>
+          <span>
+            X
+          </span>
+        </header>
+
+        <form class="modal__body">
+          <fieldset>
+            <label for="name">Name: </label>
+            <input required id="name" type="text" placeholder="Mary Jackson" />
+          </fieldset>
+
+          <fieldset>
+            <label for="email">Email: </label>
+            <input required id="email" type="email" placeholder="mary.jackson@gmail.com" />
+          </fieldset>
+
+          <fieldset>
+            <label for="email">Message: </label>
+            <textarea required id="email" type="email"></textarea>
+          </fieldset>
+
+          <button>Submit</button>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

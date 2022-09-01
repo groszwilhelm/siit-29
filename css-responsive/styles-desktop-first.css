@@ -1,0 +1,33 @@
+.mobile {
+  display: none;
+}
+
+.desktop {
+  color: blue;
+}
+
+.btn {
+  font-size: 24px;
+}
+
+@media (max-width: 1400px) {
+  .btn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: revert;
+  }
+}

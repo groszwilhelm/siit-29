@@ -1,0 +1,67 @@
+html,
+body {
+  height: 100%;
+}
+
+header {
+  grid-area: hello;
+  background-color: blue;
+}
+
+/* header,
+footer {
+  grid-column: span 3;
+} */
+
+.main-content {}
+
+nav {
+  grid-area: nav;
+  background-color: red;
+}
+
+main {
+  grid-area: main;
+  background-color: deeppink;
+}
+
+aside {
+  grid-area: aside;
+  background-color: purple;
+}
+
+footer {
+  grid-area: footer;
+  background-color: green;
+}
+
+.holy-grail-container {
+  display: grid;
+
+  grid-template-areas:
+    "footer footer footer"
+    "hello hello hello"
+    "nav main aside";
+
+  grid-template-columns: 1fr 5fr 1fr;
+
+  height: 100%;
+}
+
+.mobile {
+  grid-template-areas:
+    "footer"
+    "hello"
+    "nav"
+    "main"
+    "aside";
+}
+
+@media (max-width: 600px) {
+  .holy-grail-container {
+    grid-template-areas:
+      "main main main"
+      "hello hello hello"
+      "nav footer aside";
+  }
+}

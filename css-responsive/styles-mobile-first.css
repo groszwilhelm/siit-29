@@ -1,0 +1,49 @@
+.desktop {
+  display: none;
+}
+
+.btn {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/* 
+  position: static;
+*/
+
+@media (min-width: 576px) {
+  .desktop {
+    display: revert;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 26px;
+  }
+}
