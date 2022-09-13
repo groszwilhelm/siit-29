@@ -108,7 +108,7 @@ console.log(123 + 3);
 
 // How would we determine if a number is odd or even
 
-const userInput = prompt('Please type in your test number');
+const userInput = 43; //prompt('Please type in your test number');
 const userInputAsNumber = Number(userInput);
 // Converts expression to boolean
 // Truthy or Falsy values
@@ -122,3 +122,157 @@ if (isEven) {
 
 console.log(userInputAsNumber + 100);
 console.log(userInput + 200);
+
+/**
+ * If a user inputs a number lower than 10 show Hello
+ * If a user inputs a number lower than 20 show Hi
+ * If a user inputs a number lower than 30 show Hello World
+ * If the number is anything bigger than 30 show Awesome
+ */
+
+let userInput2 = 33; // prompt('Please input a number');
+
+if (userInput2 === '') {
+  userInput2 = promptInvalidUserInput();
+}
+
+const userInput2AsNumber = Number(userInput2);
+
+if (isNaN(userInput2AsNumber)) {
+  userInput2AsNumber = Number(promptInvalidUserInput());
+}
+
+if (userInput2AsNumber < 10) {
+  console.log('Hello');
+} else if (userInput2AsNumber < 20) {
+  console.log('Hi');
+} else if (userInput2AsNumber < 30) {
+  console.log('Hello World');
+} else if (userInput2AsNumber >= 30) {
+  console.log('Awesome');
+}
+
+/**
+ * By default all function produce undefined as a result;
+ * In order for a function to produce a result we need to: return;
+ * Pure function -> Doesn't modify things from outside, only relies on inputs to produce a value;
+ */
+function promptInvalidUserInput() {
+  console.log('You entered an invalid information! Please enter a number');
+  const userInput = prompt('You entered an invalid information! Please enter a number');
+
+  return userInput;
+}
+
+/**
+ * If user input is between 10 and 15 display Hello user
+ * 
+ * if user input is 20 or 30 display YES!
+ */
+
+/**
+ * Logical operators
+ * and && 
+ * or ||
+ */
+
+const userInput3 = 15;
+
+if (userInput3 => 10 && userInput3 <= 15) {
+  console.log('Hello user');
+}
+
+if (userInput3 === 20 || userInput3 === 30) {
+  console.log('Yes!');
+}
+/**
+ * When checking for equality between anything
+ * is user input is 20 show Yes 20
+ * is user input is 30 show Yes 30
+ * is user input is 40 show Yes 40
+ * else 50
+ * 
+ * if user input is 50 or 60 Yes something!
+ */
+
+const userInput4 = 50;
+
+switch (userInput4) {
+  case 20: {
+    console.log('Yes 20');
+    break;
+  }
+  case 30: {
+    console.log('Yes 30');
+    break;
+  }
+  case 40: {
+    console.log('Yes 40');
+    break;
+  }
+  case 50:
+  case 60: {
+    console.log('Yes something!');
+    break;
+  }
+  default: {
+    console.log('Yes 50');
+  }
+}
+
+/**
+ * Complex data types
+ * 
+ * Array - Will contain primitive values or other complex data types
+ * Object - Will contain primitive values or other complex data types
+ */
+
+const shoppingList = ['Turkey', 'Bread', 'Meat', 'Vegetables', 'Fruits'];
+// All items are stored on an index
+/**
+ * Bread - 0
+ * Meat - 1
+ * Vegetables - 2
+ * Fruits - 3
+ */
+
+console.log(shoppingList);
+
+// Adds item to the end of the list
+shoppingList.push('Something new');
+
+// Adds item to the beginning of the list
+shoppingList.unshift('Start of the list');
+
+// Remove element from the end of the list
+shoppingList.pop();
+
+// Remove first element from the list
+shoppingList.shift();
+
+// Remove an element based on the index
+// shoppingList.splice(2, 2);
+
+// find the index of an item
+
+const toRemoveIndex = shoppingList.indexOf('Vegetables');
+shoppingList.splice(toRemoveIndex, 1);
+
+console.log(shoppingList);
+
+/**
+ * const shoppingList = ['Turkey', 'Bread', 'Meat', 'Vegetables', 'Fruits'];
+ *  ['Turkey: 0', 'Bread: 1', 'Meat: 2', 'Vegetables: 3', 'Fruits: 4'];
+ */
+
+const quantity = [3, 10, 6, 20, 15];
+const shoppingListWithQuantity = [];
+
+for (let index = 0; index < shoppingList.length; index++) {
+  const product = shoppingList[index];
+  const qnt = quantity[index];
+
+  shoppingListWithQuantity.push(`${product}: ${qnt}`);
+}
+
+console.log(shoppingListWithQuantity);
