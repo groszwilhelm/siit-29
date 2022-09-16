@@ -74,12 +74,12 @@ const houseCat = 'Tom';
 
 console.log();
 
-let sum = 10;
+let sum2 = 10;
 
 // Expression -> code that evaluates to a value
-sum = (sum + 10) * 2;
+sum2 = (sum2 + 10) * 2;
 
-console.log(sum);
+console.log(sum2);
 
 const hello = 'Hello';
 const world = 'World';
@@ -276,3 +276,244 @@ for (let index = 0; index < shoppingList.length; index++) {
 }
 
 console.log(shoppingListWithQuantity);
+
+/**
+ * Create a custom functionality to sum two numbers together
+ */
+
+// This works because of hoisting
+// 4, 5 are function arguments
+console.log(sum(4, 5));
+
+// Function declaration
+function sum(a, b) {
+  // a, b function parameters
+  return a + b;
+}
+
+// function expression
+
+const sum3 = function(a, b) {
+  return a + b;
+}
+
+const sumResult = sum3(10, 12);
+
+console.log(sum3);
+console.log(sumResult);
+
+/**
+ * Arrow function
+ * Notice:
+ * - function keyword is gone
+ * - return keyword is gone
+ * - function curly braces are gone
+ */
+const arrowFunctionSum = (a, b) => a + b;
+
+const arrowFunctionSum2 = (a, b) => {
+  console.log('I have multiple lines');
+  return a + b
+};
+
+const result = arrowFunctionSum(2, 3);
+console.log(result);
+
+/**
+ * !Callback functions!
+ */
+
+/**
+ * Only add together positive numbers;
+ * callback parameter will be a function!
+ */
+function onlyPositive(a, b, callback) {
+  const argumentsArePositive = a > 0 && b > 0;
+  // early return -> when the return is not at the end of the function
+  if (argumentsArePositive) {
+    // if (action === '+') {
+    //   return add(a, b);
+    // } else {
+    //   return subtract(a, b);
+    // }
+
+    /**
+     * This will be
+     * add function
+     * or subtract function 
+     * based on what the user of this function provides us
+     */
+    return callback(a, b);
+  }
+
+  console.log('Hello world');
+
+  return false;
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log('Show only positive and add', onlyPositive(4, 5, add));
+console.log('Show only positive and subtract', onlyPositive(10, 20, subtract));
+console.log('Show only positive and multiply', onlyPositive(10, 20, multiply));
+
+
+/**
+ * Loops
+ */
+
+for (let i = 9; i >= 0; i = i - 2) {
+  console.log(i);
+}
+
+const shoppingList2 = ['Turkey', 'Bread', 'Meat', 'Vegetables', 'Fruits'];
+
+/**
+ * For of
+ */
+
+for (const product of shoppingList2) {
+  console.log('For of', product);
+}
+
+for (let i = 0; i < shoppingList2.length; i++) {
+  console.log(shoppingList2[i]);
+}
+/**
+ * While loop
+ */
+
+let index = 0;
+
+// condition
+while (index < shoppingList2.length) {
+  console.log(shoppingList2[index]);
+  index++;
+}
+
+/**
+ * Do while
+ */
+
+let index2 = 0;
+
+do {
+  console.log(shoppingList2[index2]);
+  index2++;
+} while (index2 < shoppingList2.length);
+
+/**
+ * Object
+ */
+
+/**
+ * Objects have:
+ * - properties
+ * - methods (functions)
+ * 
+ * Objects consist of key - value pairs
+ */
+
+// Object literal
+
+const alin = {
+  firstName: 'Alin',
+  lastName: 'Patroi',
+  dateOfBirth: '1993-2-3',
+};
+
+const house = {
+  rooms: 3,
+  roof: true,
+  squareMeters: 34,
+  floors: 3,
+  'hello-world': 'something else',
+  '2orice-ne-dorim-noi': '',
+  3: 'ce vreti voi',
+  'hello-world': 'Hello world',
+  roomConfiguration: ['Kitchen', 'Bathroom'],
+  roomDetails: {
+    kitchen: {
+      dors: 2,
+      windows: 1,
+    }
+  },
+  openDoor: function() {
+    console.log('Door has been opened!!');
+
+    return true;
+  },
+  getNumberOfConfigurations() {
+    this.openDoor();
+
+    return this.roomConfiguration.length;
+  }
+};
+
+const objectKeyName = '2orice-ne-dorim-noi';
+
+house.rooms;
+house.roomDetails.kitchen.dors;
+house['hello-world'];
+house[objectKeyName];
+
+house.rooms = 4;
+
+console.log(house);
+
+house.openDoor();
+
+console.log(house.getNumberOfConfigurations());
+
+house.newProperty = 'newProperty';
+house['newProperty'] = 'newProperty';
+
+delete house.newProperty;
+
+/**
+ * For in to iterate over object keys
+ */
+
+for (const key in house) {
+  console.log(house[key]);
+}
+
+console.log(Object.keys(house));
+
+for (const propertyValue of Object.values(house)) {
+
+}
+
+const availableProducts = [
+  {
+    id: '1',
+    productName: 'Set Pacco..',
+    price: 200,
+  },
+  {
+    id: '2',
+    productName: 'Lama de ras',
+    price: 200,
+  }
+];
+
+const discounts = [
+  {
+    discountForProductId: '1',
+    percent: 20,
+  },
+  {
+    discountForProductId: '2',
+    percent: 50,
+  }
+]
