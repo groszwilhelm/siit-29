@@ -1,5 +1,12 @@
 function totalDistance(inputArr) {
-  //code here
+  let sum = 0;
+
+  for (const { distance } of inputArr) {
+    sum = sum + distance;
+    // sum += distance
+  }
+
+  return sum;
 }
 
 //don't edit below
