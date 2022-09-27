@@ -6,12 +6,8 @@ function getElemsWithUniqueColors(inputArr) {
   const filteredList = [];
 
   for (const obj of inputArr) {
-    for (const otherObj of inputArr) {
-      if (obj !== otherObj) {
-        if (otherObj.color !== obj.color) {
-          filteredList.push(obj);
-        }
-      }
+    if (!atLeastOneOfColor(filteredList, obj.color)) {
+      filteredList.push(obj);
     }
   }
 
