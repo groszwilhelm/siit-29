@@ -17,6 +17,12 @@ function getObjectsWithMinArea(inputArr, minArea = 100) {
   return filteredList;
 }
 
+function getObjectsWithMinArea(inputArr, minArea = 100) {
+  const inputArrWithArea = calclulateAreasV2(inputArr);
+
+  return inputArrWithArea.filter((obj) => obj.area <= minArea);
+}
+
 // do not edit below:
 console.log({ 'Min area is 6': getObjectsWithMinArea(demoArr, 6),
   'Min area is 5': getObjectsWithMinArea(demoArr, 5),

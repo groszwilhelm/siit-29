@@ -12,6 +12,12 @@ function atLeastOneOfColor(inputArr, color = 'crimson') {
   return hasMatchingColor;
 }
 
+function atLeastOneOfColor2(inputArr, color = 'crimson') {
+  const foundItem = inputArr.some(obj => obj.color === color);
+
+  return foundItem;
+}
+
 //don't edit below
 console.log({
  'red': atLeastOneOfColor(demoArr, 'red'),

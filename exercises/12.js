@@ -11,6 +11,10 @@ function findByColor(inputArr, color) {
   }
 }
 
+function findByColor(inputArr, color) {
+  return inputArr.find(obj => obj.color === color);
+}
+
 // do not edit below:
 console.log({
   crimson: findByColor(demoArr, 'crimson'),

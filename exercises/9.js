@@ -13,6 +13,10 @@ function pluck(inputArr, objectProperty) {
   return arr;
 }
 
+function pluck2(inputArr, objectProperty) {
+  return inputArr.map((obj) => obj[objectProperty]);
+}
+
 //don't change this
 console.log({
   pluckColors: pluck(demoArr, 'color'),

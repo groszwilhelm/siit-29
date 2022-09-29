@@ -21,6 +21,10 @@ function areasAreAtLeast(inputArr, minArea = 10) {
   return true;
 }
 
+function areasAreAtLeast2(inputArr, minArea = 10) {
+  return inputArr.every(obj => obj.area < minArea);
+}
+
 //don't edit below this line
 console.log({
   6: areasAreAtLeast(demoArr, 6),

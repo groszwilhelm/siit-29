@@ -59,6 +59,16 @@ function calclulateAreasV3(inputArr) {
   return inputArr;
 }
 
+function calclulateAreasV4(inputArr) {
+  return inputArr.map(obj => {
+    // Spread
+    return {
+      ...obj,
+      area: obj.width * obj.height,
+    }
+  })
+}
+
 // do not edit below:
 console.log('Areas:', calclulateAreas(demoArr));
 console.log('Areas Version 2:', calclulateAreasV2(demoArr));
