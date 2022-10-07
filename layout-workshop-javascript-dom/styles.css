@@ -1,0 +1,187 @@
+:root {
+  --nav-color: #151d2e;
+  --body-color: #101420;
+  --container-margin: 16px;
+}
+
+body {
+  background-color: var(--body-color);
+  color: white;
+}
+
+/* 
+  * This is needed for position fixed
+  * Keep in mind that it has to be changed in media query
+*/
+
+/* main {
+  margin-top: 52.5px;
+} */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+} */
+
+nav {
+  background-color: var(--nav-color);
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+nav li:last-child {
+  margin-left: auto;
+}
+
+nav li a {
+  display: inline-block;
+  padding: 14px;
+}
+
+.search {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.search__btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 16px;
+}
+
+.search__input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+}
+
+i {
+  font-size: 20px;
+}
+
+.trending-card {
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.trending-card__bookmark,
+.trending-card__title,
+.trending-card-details,
+.trending-card__rating {
+  position: absolute;
+}
+
+.trending-card__image {
+  border-radius: 10px;
+}
+
+.trending-card__bookmark {
+  display: flex;
+
+  top: 10px;
+  right: 10px;
+
+  padding: 10px;
+  border-radius: 50%;
+
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
+.trending-card__title {
+  left: 10px;
+  bottom: 10px;
+}
+
+.trending-card-details {
+  left: 10px;
+  bottom: 30px;
+
+  color: rgba(200, 200, 200);
+}
+
+.trending-card__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.trending-card__rating {
+  right: 20px;
+  bottom: 20px
+}
+
+.trending-section {
+  margin-left: var(--container-margin);
+}
+
+.trending-section-movies {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+}
+
+.recommended-section {
+  margin: 0 var(--container-margin);
+}
+
+.trending-section header,
+.recommended-section header {
+  margin: 20px 0;
+}
+
+.recommended-section-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  nav {
+    margin: var(--container-margin);
+    border-radius: 10px;
+  }
+}
+
+#something:checked + label .fa-solid {
+  display: revert;
+}
+
+#something:checked + label .fa-regular {
+  display: none;
+}
+
+#something + label .fa-solid {
+  display: none;
+}
+
+#something + label .fa-regular {
+  display: revert;
+}
+
+#something {
+  display: none;
+}

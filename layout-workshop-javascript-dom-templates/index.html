@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reboot.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="./main.js"></script>
+</head>
+
+<body>
+
+  <main>
+    <nav>
+      <ul>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Search area -->
+    <section class="search">
+      <button class="search__btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <input class="search__input" type="text" placeholder="Search for movies or tv series" />
+    </section>
+
+    <!-- Trending area -->
+    <section class="trending-section">
+      <header>
+        <h2>Trending</h2>
+      </header>
+
+      <section class="trending-section-movies" data-trending>
+
+      </section>
+    </section>
+
+    <!-- Recommended for you -->
+    <section class="recommended-section">
+      <header>
+        <h2>Recommended for you</h2>
+      </header>
+
+      <section class="recommended-section-movies" data-recommended>
+
+      </section>
+    </section>
+  </main>
+
+  <template id="movie-card">
+    <article class="trending-card">
+      <img class="trending-card__image" data-card-img width="240" height="140" />
+  
+      <div class="trending-card__overlay">
+        <div class="trending-card-details">
+          <span class="trending-card__date" data-card-date></span>
+          <span class="trending-card__type" data-card-type>
+            <i data-card-type-icon></i>
+          </span>
+        </div>
+        <span class="trending-card__rating" data-card-pg></span>
+        <span class="trending-card__bookmark">
+          <i data-card-bookmark-icon></i>
+        </span>
+        <h3 class="trending-card__title" data-card-title></h3>
+      </div>
+    </article>
+  </template>
+
+</body>
+
+</html>
