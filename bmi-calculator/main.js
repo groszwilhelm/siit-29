@@ -34,6 +34,8 @@ calculateElement.addEventListener('click', calculateBmi, { once: false });
 function calculateBmi(event) {
   event.preventDefault();
 
+  event.stopPropagation();
+
   const bmi = Number(weightElement.value) / (Number(heightElement.value) ** 2);
 
   outputElement.textContent = bmi;

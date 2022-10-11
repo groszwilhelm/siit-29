@@ -170,13 +170,15 @@ function createMovieItem(insertionPoint, movieDetails) {
   date.textContent = movieDetails.releaseDate;
 
   const type = clonedTemplate.querySelector('[data-card-type]');
-  type.textContent = movieDetails.genre;
+
+  const genre = document.createTextNode(movieDetails.genre);
+  type.appendChild(genre);
   
-  const typeIcon = type.querySelector('[data-card-type-icon]');
-  // debugger;
-  // for (const iconClass of movieDetails.iconClasses) {
-  //   typeIcon.classList.add(iconClass);
-  // }
+  const typeIcon = clonedTemplate.querySelector('[data-card-type-icon]');
+
+  for (const iconClass of movieDetails.iconClasses) {
+    typeIcon.classList.add(iconClass);
+  }
   
   const pg = clonedTemplate.querySelector('[data-card-pg]');
   
@@ -185,10 +187,29 @@ function createMovieItem(insertionPoint, movieDetails) {
   }
 
   const bookmarkIcon = clonedTemplate.querySelector('[data-card-bookmark-icon]');
-  // bookmarkIcon.classList.add('fa-solid', 'fa-bookmark');
+  bookmarkIcon.classList.add('fa-regular', 'fa-bookmark')
+  
+  bookmarkIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
+    
+    if (bookmarkIcon.classList.contains('fa-regular')) {
+      bookmarkIcon.classList.remove('fa-regular');
+      bookmarkIcon.classList.add('fa-solid');
+    } else {
+      bookmarkIcon.classList.remove('fa-solid');
+      bookmarkIcon.classList.add('fa-regular');
+    }
+    // alternative to the above code
+    // bookmarkIcon.classList.toggle('fa-solid');
+    // bookmarkIcon.classList.toggle('fa-regular');
+  });
 
   const title = clonedTemplate.querySelector('[data-card-title]');
   title.textContent = movieDetails.title;
 
   insertionPoint.appendChild(clonedTemplate);
 }
+
+document.addEventListener('click', () => {
+  console.log('I have been clicked');
+})
