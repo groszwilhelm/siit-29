@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <label for="city">Select your City</label>
+  <input type="text" id="city" data-city />
+  <button data-search>Search</button>
+
+  <section data-output>
+
+  </section>
+
+  <template id="weatherOutput">
+    <p class="weather-temperature" data-temp></p>
+    <p class="wather-description" data-description></p>
+
+    <table border="2">
+      <thead>
+        <tr data-thead></tr>
+      </thead>
+      
+      <tbody>
+        <tr data-tbodyrow></tr>
+      </tbody>
+    </table>
+  </template>
+</body>
+</html>
