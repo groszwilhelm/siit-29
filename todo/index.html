@@ -8,6 +8,21 @@
   <script defer src="./main.js"></script>
 </head>
 <body>
+  <section>
+    <form>
+      <label for="title">Title</label>
+      <input id="title" data-title type="text" />
+      
+      <label for="description">Description</label>
+      <input id="description" data-description type="text" />
+  
+      <label for="deadline">Deadline</label>
+      <input id="deadline" data-deadline type="date" />
+  
+      <button data-createTodo>Create todo</button>
+    </form>
+  </section>
+
   <section data-todoList></section>
 
   <template id="todo-card">
