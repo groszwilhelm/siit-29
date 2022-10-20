@@ -5,6 +5,11 @@
  * 3. Delete todo (DELETE /todos/:id)
  * 4. Update todo (PATCH/PUT /todos/:id)
  */
+const titleElement = document.querySelector('[data-title]');
+const descriptionElement = document.querySelector('[data-description]');
+const deadlineElement = document.querySelector('[data-deadline]');
+const createTodoButton = document.querySelector('[data-createTodo]');
+const editTodoButton = document.querySelector('[data-editTodo]');
 
 const url = 'http://localhost:3000';
 const endpoint = '/todos';
@@ -12,7 +17,7 @@ const endpoint = '/todos';
 retrieveTodoList();
 
 function retrieveTodoList() {
-  fetch(url + endpoint)
+  fetch(url + endpoint + '?_page=2&_limit=2')
     .then((response) => response.json())
     .then((todos) => listTodos(todos))
 }
@@ -20,6 +25,13 @@ function retrieveTodoList() {
 function listTodos(todos) {
   const template = document.querySelector('#todo-card');
   const output = document.querySelector('[data-todoList]');
+
+  output.innerHTML = '';
+  titleElement.value = '';
+  descriptionElement.value = '';
+  deadlineElement.value = '';
+  createTodoButton.classList.remove('hidden');
+  editTodoButton.classList.add('hidden');
 
   for (const todo of todos) {
     const clonedTemplate = template.content.cloneNode(true);
@@ -33,9 +45,58 @@ function listTodos(todos) {
     const deadline = clonedTemplate.querySelector('[data-todoDeadline]');
     deadline.textContent = todo.deadline;
 
+    const deleteButton = clonedTemplate.querySelector('[data-delete]');
+    deleteButton.setAttribute('id', todo.id);
+
+    deleteButton.addEventListener('click', () => {
+      console.log({ button: deleteButton });
+      // fetch(`${url}${endpoint}/${todo.id}`)
+      fetch(url + endpoint + '/' + deleteButton.getAttribute('id'), { method: 'DELETE' })
+        .then(() => retrieveTodoList());
+    });
+
+    const editButton = clonedTemplate.querySelector('[data-edit]');
+
+    editButton.addEventListener('click', () => {
+      titleElement.value = todo.title;
+      descriptionElement.value = todo.description;      
+      deadlineElement.value = todo.deadline;
+
+      createTodoButton.classList.add('hidden');
+      editTodoButton.classList.remove('hidden');
+      editTodoButton.setAttribute('id', todo.id);
+    });
+
     output.appendChild(clonedTemplate);
   }
 }
+
+editTodoButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const title = titleElement.value;
+  const description = descriptionElement.value;
+  const deadline = deadlineElement.value;
+  const id = editTodoButton.getAttribute('id');
+
+  const body = {
+    title,
+    description,
+    deadline,
+  };
+  const json = JSON.stringify(body);
+
+  fetch(url + endpoint + '/' + id, {
+    method: 'PUT',
+    body: json,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+    .then(() => {
+      retrieveTodoList();
+    });
+});
 
 /**
  * strongly typed programming languages
@@ -94,12 +155,7 @@ function listTodos(todos) {
 // sayNumber(numberObject);
 // console.log(numberObject);
 
-const titleElement = document.querySelector('[data-title]');
-const descriptionElement = document.querySelector('[data-description]');
-const deadlineElement = document.querySelector('[data-deadline]');
-const createTodo = document.querySelector('[data-createTodo]');
-
-createTodo.addEventListener('click', function(event) {
+createTodoButton.addEventListener('click', function(event) {
   event.preventDefault();
   event.stopPropagation();
 
@@ -125,5 +181,41 @@ createTodo.addEventListener('click', function(event) {
     .then((response) => { 
       retrieveTodoList()
     });
-
 });
+
+function sayGoodbye() {
+  console.log('Goodbye');
+}
+
+let newName = 'Stefan';
+
+// Encapsulation
+function sayHello() {
+  const name = "Ion";
+  const lastName = 'Hello';
+  newName = 'Ion';
+
+  console.log(name);
+
+  return function greeter() {
+    debugger;
+    console.log('Hello ' + newName);
+  }
+}
+
+newName = 'Altceva';
+
+// document.addEventListener('click', () => {
+//   // Currying 
+//   sayHello()();
+
+//   const greeterFunction = sayHello();
+//   greeterFunction();
+// });
+
+function yolo() {
+  console.log(arguments[0]);
+}
+
+yolo(1, 2, 3);
+

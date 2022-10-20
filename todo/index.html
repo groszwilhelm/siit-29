@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo Siit-29</title>
+  <link rel="stylesheet" href="styles.css">
   <script defer src="./main.js"></script>
 </head>
 <body>
@@ -20,6 +21,7 @@
       <input id="deadline" data-deadline type="date" />
   
       <button data-createTodo>Create todo</button>
+      <button data-editTodo class="hidden">Edit todo</button>
     </form>
   </section>
 
@@ -36,6 +38,9 @@
         <p data-todoDeadline></p>
       </article>
     </section>
+
+    <button data-delete>Delete</button>
+    <button data-edit>Edit</button>
   </template>
 </body>
 </html>

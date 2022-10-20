@@ -1,79 +1,22 @@
 {
   "todos": [
     {
-      "title": "Test 1",
-      "description": "siit-29 test description",
-      "addedDate": "2022-10-12",
-      "deadline": "2023-10-12",
+      "title": "hello4",
+      "description": "world",
+      "deadline": "2022-10-19",
       "id": 1
     },
     {
-      "title": "Test 2",
-      "description": "siit-29 test description 2 updated",
-      "addedDate": "2022-10-12",
-      "deadline": "2023-10-12",
+      "title": "sadas",
+      "description": "dsada",
+      "deadline": "2022-10-19",
       "id": 2
     },
     {
-      "title": "Test 3",
-      "description": "siit-29 test description 2",
-      "addedDate": "2022-10-12",
-      "deadline": "2023-10-12",
-      "id": 3
-    },
-    {
-      "title": "hello",
-      "description": "world",
-      "deadline": "2022-10-12",
-      "id": 7
-    },
-    {
-      "title": "dsadas",
-      "description": "dasda",
-      "deadline": "2022-10-12",
-      "id": 8
-    },
-    {
-      "title": "dasdsa",
-      "description": "dsadasd",
-      "deadline": "2022-10-05",
-      "id": 9
-    },
-    {
       "title": "dasda",
-      "description": "dsada",
-      "deadline": "2022-10-12",
-      "id": 10
-    },
-    {
-      "title": "dasdas",
-      "description": "dasdsa",
-      "deadline": "2022-10-12",
-      "id": 11
-    },
-    {
-      "title": "testo",
-      "description": "testo2",
-      "deadline": "2022-10-13",
-      "id": 12
-    },
-    {
-      "title": "testo 23",
-      "description": "dsadsa",
-      "deadline": "2022-10-20",
-      "id": 13
-    },
-    {
-      "title": "testo 23",
-      "description": "dsadsa",
-      "deadline": "2022-10-20",
-      "id": 14
-    },
-    {
-      "title": "testo 12321",
-      "description": "dsadsadasda",
-      "deadline": "2022-10-27",
-      "id": 15
+      "description": "dasda",
+      "deadline": "2022-10-11",
+      "id": 3
     }
   ]
 }
