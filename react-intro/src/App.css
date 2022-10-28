@@ -1,0 +1,42 @@
+:root {
+  --red: rgb(229, 55, 55);
+  --blue: rgb(61, 61, 217);
+  --yellow: yellow;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.btn {
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-red {
+  background-color: var(--red);
+}
+
+.btn-blue {
+  background-color: var(--blue);;
+}
+
+.btn-yellow {
+  background-color: var(--yellow);;
+  color: black;
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-blue {
+  background-color: var(--blue);;
+}
+
+.bg-yellow {
+  background-color: var(--yellow);;
+}
