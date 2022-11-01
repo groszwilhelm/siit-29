@@ -1,12 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-
-const buttons = [
-  { text: 'red', className: 'btn-red' },
-  { text: 'blue', className: 'btn-blue' },
-  { text: 'yellow', className: 'btn-yellow' },
-]
+import { Button } from './components/Button';
+import { Article } from './components/Article';
 
 function App() {
   // State hook
@@ -15,32 +10,46 @@ function App() {
   const [backgroundColor, setBackgroundColor] = useState('bg-blue');
   // const [width, setWidth] = useState(500);
   // const [todos, setTodos] = useState([]);
-  
-  function buttonClickHandler(event) {
-    
-    if (event.target.className.includes('btn-red')) {
-      // backgroundColor = 'bg-red';
-      setBackgroundColor('bg-red');
-      // setWidth('300px');
-    }
 
-    if (event.target.className.includes('btn-blue')) {
-      // backgroundColor = 'bg-blue';
-      setBackgroundColor('bg-blue');
-      // setWidth({ hello: 'world' });
-      // setTodos([{}, {}, {}]);
-    }
+  // function buttonClickHandler(event) {
 
-    if (event.target.className.includes('btn-yellow')) {
-      // backgroundColor = 'bg-yellow';
-      setBackgroundColor('bg-yellow');
-      // setWidth('500px');
-    }
+  //   if (event.target.className.includes('btn-red')) {
+  //     // backgroundColor = 'bg-red';
+  //     setBackgroundColor('bg-red');
+  //     // alternative to updating the state
+  //     // setBackgroundColor((previousState) => {
+  //     //   return 'bg-red';
+  //     // });
+  //     // setWidth('300px');
+  //   }
+
+  //   if (event.target.className.includes('btn-blue')) {
+  //     // backgroundColor = 'bg-blue';
+  //     setBackgroundColor('bg-blue');
+  //     // setWidth({ hello: 'world' });
+  //     // setTodos([{}, {}, {}]);
+  //   }
+
+  //   if (event.target.className.includes('btn-yellow')) {
+  //     // backgroundColor = 'bg-yellow';
+  //     setBackgroundColor('bg-yellow');
+  //     // setWidth('500px');
+  //   }
+  // }
+
+  function buttonClickHandler(className) {
+    setBackgroundColor(className);
   }
 
   return (
     // <main className={backgroundColor} style={{ width }}>
     <main className={backgroundColor}>
+      {/* <Article />
+      <Article />
+      <Article />
+      <Article />
+      <Article /> */}
+
       <section>
         <p>Color Picker</p>
         {/* Button({ text: 'red' }) */}
@@ -54,13 +63,12 @@ function App() {
 
 export default App;
 
-function Button({ text, className, onClick }) {
-  // const { text, prop2 } = props;
+function useCustomState(defaultValue) {
+  let value = defaultValue;
 
-  return (
-    // <button className={'btn ' + className}>
-    <button className={`btn ${className}`} onClick={onClick}>
-      {text}
-    </button>
-  )
+  function reRenderReactComponent(newValue) {
+    value = newValue;
+  }
+
+  return [value, reRenderReactComponent]
 }
