@@ -1,8 +1,25 @@
 import './App.css';
+import { MovieListComponent } from './pages/movie-list/MovieListComponent';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { MovieDetails } from './pages/movie-details/MovieDetailsComponent';
+
+/**
+ * SPA -> Single Page Application
+ */
 
 function App() {
   return (
-    <section></section>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MovieListComponent />}></Route>
+        <Route path='/movie-details/:movieId' element={<MovieDetails />}></Route>
+      </Routes>
+    </BrowserRouter>
+    // <MovieListComponent></MovieListComponent>
   );
 }
 
