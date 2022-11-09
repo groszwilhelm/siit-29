@@ -8,18 +8,11 @@ export function MovieListComponent() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const movies = JSON.parse(sessionStorage.getItem('movies'));
-
-    if (movies) {
-      setMovies(movies);
-    } else {
-      fetch(moviesUrl)
-        .then((response) => response.json())
-        .then((moviesFromServer) => {
-          sessionStorage.setItem('movies', JSON.stringify(moviesFromServer))
-          setMovies(moviesFromServer);
-        });
-    }
+    fetch(moviesUrl)
+      .then((response) => response.json())
+      .then((moviesFromServer) => {
+        setMovies(moviesFromServer);
+      });
   }, []);
 
   return (
@@ -39,6 +32,7 @@ export function MovieListComponent() {
               Type={movie.Type}
               Poster={movie.Poster}
               id={movie.id}
+              key={movie.id}
             ></MovieCardComponent>
           );
         })}

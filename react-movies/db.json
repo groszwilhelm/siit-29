@@ -1,18 +1,11 @@
 {
   "movies": [
-    { 
+    {
       "Title": "Captain America: The First Avenger",
       "Year": "2011",
       "id": "tt0458339",
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "The Toxic Avenger",
-      "Year": "1984",
-      "id": "tt0090190",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNzViNmQ5MTYtMmI4Yy00N2Y2LTg4NWUtYWU3MThkMTVjNjk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     },
     {
       "Title": "The Toxic Avenger Part II",
@@ -36,11 +29,11 @@
       "Poster": "https://m.media-amazon.com/images/M/MV5BNjVlNzFjMGItMTEwYy00OTc0LWFmY2ItM2U0MmQyYWI5Njk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     },
     {
-      "Title": "Avenger",
-      "Year": "2006",
+      "Title": "Avenger 50",
+      "Year": "2050",
+      "Type": "documentaries",
       "id": "tt0473445",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTMzMjMwMjcyNl5BMl5BanBnXkFtZTcwNTA1NDgzMQ@@._V1_SX300.jpg"
+      "Poster": "https://picsum.photos/200/300"
     },
     {
       "Title": "Knives of the Avenger",
@@ -195,20 +188,6 @@
       "id": "tt0026241",
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BMDJjMzU4NGYtM2NjOS00MmMyLWE4OGQtYWEzZTY0ZTkyYzNhXkEyXkFqcGdeQXVyMzg1ODEwNQ@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Avenger X",
-      "Year": "1967",
-      "id": "tt0060706",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZmNjNjRmMjItZGIzMS00MDI2LTk1YzUtZmE2MTNmZTc3ZjcxXkEyXkFqcGdeQXVyNjg2NjExMzY@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Dark Avenger",
-      "Year": "1990",
-      "id": "tt0099360",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNmVlMjM3NDctMjAzNS00YzhhLWE5ODctMDhlMzk4NDYwOGY3XkEyXkFqcGdeQXVyNjU0NTI0Nw@@._V1_SX300.jpg"
     }
   ]
 }

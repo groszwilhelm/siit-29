@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { MovieDetails } from './pages/movie-details/MovieDetailsComponent';
+import { MovieEditComponent } from './pages/movie-edit/MovieEditComponent';
 
 /**
  * SPA -> Single Page Application
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MovieListComponent />}></Route>
         <Route path='/movie-details/:movieId' element={<MovieDetails />}></Route>
+        <Route path='/movie-details/:movieId/edit' element={<MovieEditComponent />}></Route>
       </Routes>
     </BrowserRouter>
     // <MovieListComponent></MovieListComponent>
@@ -38,4 +40,5 @@ export default App;
  * + Additional suggestions: 
  * - Quantity on movies than can be purchased.
  * - Search for movies + additional filters (Genre / etc)
+ * - upload image
  */
