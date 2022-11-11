@@ -19,6 +19,7 @@ function App() {
         <Route path="/" element={<MovieListComponent />}></Route>
         <Route path='/movie-details/:movieId' element={<MovieDetails />}></Route>
         <Route path='/movie-details/:movieId/edit' element={<MovieEditComponent />}></Route>
+        <Route path='/create' element={<MovieEditComponent formType='create' />} ></Route>
       </Routes>
     </BrowserRouter>
     // <MovieListComponent></MovieListComponent>

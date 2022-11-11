@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export function MovieEditComponent() {
+// formType can be create / edit
+export function MovieEditComponent({ formType = 'edit' }) {
   const movieDetailUrl = 'http://localhost:3001/movies';
   let { movieId } = useParams();
 
@@ -14,14 +15,16 @@ export function MovieEditComponent() {
   const [img, setImg] = useState('');
 
   useEffect(() => {
-    fetch(`${movieDetailUrl}/${movieId}`)
-      .then((response) => response.json())
-      .then((movie) => {
-        setTitle(movie.Title);
-        setYear(movie.Year);
-        setType(movie.Type);
-        setImg(movie.Poster);
-      })
+    if (formType === 'edit') {
+      fetch(`${movieDetailUrl}/${movieId}`)
+        .then((response) => response.json())
+        .then((movie) => {
+          setTitle(movie.Title);
+          setYear(movie.Year);
+          setType(movie.Type);
+          setImg(movie.Poster);
+        });
+    }
   }, []);
 
   function selectChange(event) {
@@ -50,37 +53,45 @@ export function MovieEditComponent() {
       Poster: img,
     };
 
-    fetch(`${movieDetailUrl}/${movieId}`, {
-      method: 'PATCH',
+    const url = formType === 'edit' ? `${movieDetailUrl}/${movieId}` : movieDetailUrl;
+
+    fetch(url, {
+      method: formType === 'edit' ? 'PATCH' : 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
-    }).then(() => navigate('/movie-details/'+ movieId));
+    }).then(() => {
+      if (formType === 'edit') {
+        navigate('/movie-details/' + movieId)
+      } else {
+        navigate('/');
+      }
+    });
   }
 
   return (
     <form>
       <div>
-        <label htmlFor="title"></label>
+        <label htmlFor="title">Title</label>
         <input id="title" type="text" value={title} onChange={titleChange} />
       </div>
 
       <div>
-        <label htmlFor="year"></label>
+        <label htmlFor="year">Year</label>
         <input id="year" type="number" value={year} onChange={yearChange} />
       </div>
 
       <div>
-        <label htmlFor="img"></label>
+        <label htmlFor="img">Poster</label>
         <input id="img" type="text" value={img} onChange={imgChange} />
       </div>
 
       <div>
-        <label htmlFor="type"></label>
-        <select 
-          id="type" 
-          value={type} 
+        <label htmlFor="type">Movie type</label>
+        <select
+          id="type"
+          value={type}
           onChange={selectChange}
         >
           <option value="null" disabled>Please select a value</option>
@@ -90,7 +101,11 @@ export function MovieEditComponent() {
         </select>
       </div>
 
-      <button onClick={submit}>Save changes</button>
+      <button onClick={submit}>
+        {
+          formType === 'edit' ? 'Save changes' : 'Create'
+        }
+      </button>
     </form>
   )
 }

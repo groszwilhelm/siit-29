@@ -7,6 +7,9 @@ export function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState({});
   const navigate = useNavigate();
 
+  // Use effect is only called when the component is initially created
+  // If we want to call this function again, we need to pass a variable in the dependency array
+  // When the variable changes value the use effect gets called again.
   useEffect(() => {
     fetch(`${movieDetailUrl}/${movieId}`)
       .then((response) => response.json())
