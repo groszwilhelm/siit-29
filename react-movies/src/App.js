@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { MovieDetails } from './pages/movie-details/MovieDetailsComponent';
 import { MovieEditComponent } from './pages/movie-edit/MovieEditComponent';
+import { ShoppingCart } from './pages/cart/cart';
 
 /**
  * SPA -> Single Page Application
@@ -20,6 +21,7 @@ function App() {
         <Route path='/movie-details/:movieId' element={<MovieDetails />}></Route>
         <Route path='/movie-details/:movieId/edit' element={<MovieEditComponent />}></Route>
         <Route path='/create' element={<MovieEditComponent formType='create' />} ></Route>
+        <Route path='/cart' element={<ShoppingCart />} ></Route>
       </Routes>
     </BrowserRouter>
     // <MovieListComponent></MovieListComponent>
