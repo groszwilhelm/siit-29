@@ -256,24 +256,17 @@
   ],
   "cart": [
     {
-      "movieId": "tt0212879",
-      "quantity": 1,
+      "movies": [
+        {
+          "movieId": "tt0098503",
+          "quantity": 9
+        },
+        {
+          "movieId": "tt0212879",
+          "quantity": 1
+        }
+      ],
       "id": 1
-    },
-    {
-      "movieId": "tt0098503",
-      "quantity": 8,
-      "id": 2
-    },
-    {
-      "movieId": "tt0458339",
-      "quantity": 7,
-      "id": 3
-    },
-    {
-      "movieId": "tt0098502",
-      "quantity": 1,
-      "id": 4
     }
   ]
 }

@@ -8,33 +8,45 @@ export function MovieCardComponent(props) {
   function addToCart(event) {
     event.preventDefault();
 
-    fetch(`${cartUrl}?movieId=${id}`)
+    fetch(cartUrl)
       .then(response => response.json())
-      .then(cartMovies => {
-        const [cartMovie] = cartMovies;
+      .then(cartList => {
+        const [cart] = cartList;
 
-        if (cartMovie) {
-          updateCartMovieQuantity(cartMovie);
+        if (cart) {
+          const movieInCart = cart.movies.find((movie) => movie.movieId === id);
+
+          if (movieInCart) {
+            movieInCart.quantity = movieInCart.quantity + 1; 
+          } else {
+            cart.movies.push({ movieId: id, quantity: 1 });
+          }
+
+          updateCart(cart.id, cart.movies);
         } else {
-          createCartMovie();
+          createCart();
         }
-      });
+      })
   }
 
-  function createCartMovie() {
+  function createCart() {
     fetch(`${cartUrl}`, {
       method: 'POST',
-      body: JSON.stringify({ movieId: id, quantity: 1 }),
+      body: JSON.stringify({ 
+        movies: [
+          { movieId: id, quantity: 1 }
+        ] 
+      }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
   }
 
-  function updateCartMovieQuantity(cartMovie) {
-    fetch(`${cartUrl}/${cartMovie.id}`, {
+  function updateCart(cartId, movies) {
+    fetch(`${cartUrl}/${cartId}`, {
       method: 'PATCH',
-      body: JSON.stringify({ quantity: cartMovie.quantity + 1 }),
+      body: JSON.stringify({ movies }),
       headers: {
         'Content-Type': 'application/json'
       }
