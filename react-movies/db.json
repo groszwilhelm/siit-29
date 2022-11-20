@@ -11,15 +11,6 @@
       "Supply": "10"
     },
     {
-      "Title": "The Toxic Avenger Part II",
-      "Year": "1989",
-      "Price": "19.89",
-      "Currency": "USD",
-      "id": "tt0098503",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BODhiNTljYTctMmIzZC00ZGVkLTk2NmItN2RjMzY3ZTYyNDczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-    },
-    {
       "Title": "Citizen Toxie: The Toxic Avenger IV",
       "Year": "2000",
       "Price": "20.00",
@@ -266,6 +257,13 @@
           "quantity": 1
         }
       ],
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$W5Y5HUFaIG7Q8Qi3X/pzJeQTAYqp8WqXPX/1z8qI1dDf3q9OI7kp2",
       "id": 1
     }
   ]

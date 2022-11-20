@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../auth/AuthContext';
 
 // formType can be create / edit
 export function MovieEditComponent({ formType = 'edit' }) {
@@ -7,6 +8,8 @@ export function MovieEditComponent({ formType = 'edit' }) {
   let { movieId } = useParams();
 
   const navigate = useNavigate();
+
+  const { auth } = useContext(AuthContext);
 
   // In react the following are controlled inputs.
   const [title, setTitle] = useState('');
@@ -16,7 +19,11 @@ export function MovieEditComponent({ formType = 'edit' }) {
 
   useEffect(() => {
     if (formType === 'edit') {
-      fetch(`${movieDetailUrl}/${movieId}`)
+      fetch(`${movieDetailUrl}/${movieId}`, {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`
+        }
+      })
         .then((response) => response.json())
         .then((movie) => {
           setTitle(movie.Title);
@@ -58,7 +65,8 @@ export function MovieEditComponent({ formType = 'edit' }) {
     fetch(url, {
       method: formType === 'edit' ? 'PATCH' : 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${auth.accessToken}`
       },
       body: JSON.stringify(body)
     }).then(() => {

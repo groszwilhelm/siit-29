@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../auth/AuthContext';
 import { MovieCardComponent } from './MovieCardComponent';
 import './MovieListComponent.css';
 
@@ -14,10 +15,16 @@ export function MovieListComponent() {
     documentaries: false,
   });
 
+  const { auth, logOut } = useContext(AuthContext);
+
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    fetch(moviesUrl)
+    fetch(moviesUrl, {
+      headers: {
+        'Authorization': `Bearer ${auth.accessToken}`
+      }
+    })
       .then(response => {
         if (!response.ok) {
           setErrorMessage('There has been a problem, please try again later.');
@@ -85,6 +92,12 @@ export function MovieListComponent() {
 
   return (
     <section>
+      <nav>
+        <p>Hello, {auth?.user?.email}</p>
+
+        <button onClick={logOut}>Log out</button>
+      </nav>
+
       <header>
         <h1 className="movie-list--title">
           Movie list

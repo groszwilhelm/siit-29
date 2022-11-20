@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
+import { AuthContext } from '../auth/AuthContext';
 
 export function MovieDetails() {
   const movieDetailUrl = 'http://localhost:3001/movies';
@@ -7,22 +8,34 @@ export function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState({});
   const navigate = useNavigate();
 
+  const { auth } = useContext(AuthContext);
+
   // Use effect is only called when the component is initially created
   // If we want to call this function again, we need to pass a variable in the dependency array
   // When the variable changes value the use effect gets called again.
   useEffect(() => {
-    fetch(`${movieDetailUrl}/${movieId}`)
+    fetch(`${movieDetailUrl}/${movieId}`, {
+      headers: {
+        Authorization: `Bearer ${auth.accessToken}`
+      }
+    })
       .then((response) => response.json())
       .then((movie) => setMovieDetails(movie))
   }, []);
 
   function deleteMovie() {
-    fetch(`${movieDetailUrl}/${movieId}`, {
-      method: 'DELETE',
-    })
-      .then(() => {
-        navigate('/');
-      });
+    if (auth.user.admin) {
+      fetch(`${movieDetailUrl}/${movieId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`
+        }
+      })
+        .then(() => {
+          navigate('/');
+        });
+    }
+
   }
 
   function editMovie() {
@@ -36,7 +49,9 @@ export function MovieDetails() {
       <span>{movieDetails.Type}</span>
       <img src={movieDetails.Poster} alt="Movie image" />
 
-      <button onClick={deleteMovie}>Delete</button>
+      {
+        auth.user.admin ? <button onClick={deleteMovie}>Delete</button> : 'You need to be an admin in order to delete'
+      }
       <button onClick={editMovie}>Edit</button>
     </section>
   )

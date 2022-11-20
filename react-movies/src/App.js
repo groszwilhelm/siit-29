@@ -8,23 +8,52 @@ import {
 import { MovieDetails } from './pages/movie-details/MovieDetailsComponent';
 import { MovieEditComponent } from './pages/movie-edit/MovieEditComponent';
 import { ShoppingCart } from './pages/cart/cart';
+import { Login } from './pages/auth/Login';
+import React from 'react';
+import { AuthContextProvider } from './pages/auth/AuthContext';
+import { PublicPage } from './pages/PublicPage';
+import { CanNavigate } from './pages/auth/CanNavigate';
 
 /**
  * SPA -> Single Page Application
  */
 
+
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MovieListComponent />}></Route>
-        <Route path='/movie-details/:movieId' element={<MovieDetails />}></Route>
-        <Route path='/movie-details/:movieId/edit' element={<MovieEditComponent />}></Route>
-        <Route path='/create' element={<MovieEditComponent formType='create' />} ></Route>
-        <Route path='/cart' element={<ShoppingCart />} ></Route>
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path='public' element={<PublicPage />}></Route>
+          <Route path='login' element={<Login />}></Route>
+          <Route path="/" element={
+            <CanNavigate>
+              <MovieListComponent />
+            </CanNavigate>
+          }></Route>
+          <Route path='/movie-details/:movieId' element={
+            <CanNavigate>
+              <MovieDetails />
+            </CanNavigate>
+          }></Route>
+          <Route path='/movie-details/:movieId/edit' element={
+            <CanNavigate>
+              <MovieEditComponent />
+            </CanNavigate>
+          }></Route>
+          <Route path='/create' element={
+            <CanNavigate>
+              <MovieEditComponent formType='create' />
+            </CanNavigate>
+          } ></Route>
+          <Route path='/cart' element={
+            <CanNavigate>
+              <ShoppingCart />
+            </CanNavigate>
+          } ></Route>
+        </Routes>
+      </AuthContextProvider>
     </BrowserRouter>
-    // <MovieListComponent></MovieListComponent>
   );
 }
 
